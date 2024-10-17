@@ -6,22 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>JavaScript Externo</h1>
-
-    <div id="buttoms">
-        <button id="bottom1">Ação 1</button>
-        <button id="bottom2">Ação 2</button>
-        <button id="bottom3">Ação 3</button>
-        <button id="bottom4">Ação 4</button>
+    <div class="buttons">
+        <button class="actionbutton" data-action="primeiro">1</button>
+        <button class="actionbutton" data-action="segundo">2</button>
+        <button class="actionbutton" data-action="tericero">3</button>
+        <button class="actionbutton" data-action="quarto">4</button>
     </div>
-    <p>Aqui vamos registrar suas ações com os botões acima.</p>
-    <div id="mensagem">
 
-    </div>
+    <div id="output">Aqui vou registrar as ações</div>
+
     <script>
-        document.getElementById('bottom1').addEventListener('click'), function(){
-            document.getElementById('mensagem').textContent += "clicou no 1";
-        }
+
+        const buttons = document.querySelectorAll('.actionbutton');
+        constoutput = document.getElementById('output');
+
+        bottons.forEach(button => {
+            button.addEventListener('click', function()) {
+                const action = this.getAttribute ('data-action');
+
+                output.textContent += 'clicou no ${action} botão\n';
+            });
+        });
     </script>
-</body>
 </html>
